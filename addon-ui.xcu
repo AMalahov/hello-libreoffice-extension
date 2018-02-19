@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data
+        xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        oor:package="org.openoffice.Office" oor:name="Addons"
+>
+    <node oor:name="AddonUI">
+
+        <!-- Everything you'll add to this node will be displayed in the user interface (UI)
+             under "Tools | Add-Ons" menu. You can add as many menu items as you wish
+         -->
+        <node oor:name="AddonMenu">
+
+            <!-- oor:Name of the menu item can be anything, but remember that all add-ons share the same namespace. I.e.
+                 this name must be unique across all add-ons user has installed
+             -->
+            <node oor:name="com.github.amalahov.hellooffice-menu-item-14" oor:op="fuse">
+
+                <!-- This is the text user will see in UI -->
+                <prop oor:name="Title" oor:type="xs:string">
+                    <value>Hello14</value>
+                    <value xml:lang="ru">Привет</value>
+                </prop>
+
+                <prop oor:name="URL" oor:type="xs:string">
+                    <!-- Value of ExampleExtension.IMPLEMENTATION_NAME.
+                         Everything after '?' are arguments to `trigger` method.
+                    -->
+                    <value>service:com.github.amalahov.hellooffice.n14?some_string_passed_to_args</value>
+                </prop>
+
+                <prop oor:name="Target" oor:type="xs:string">
+                    <value>_self</value>
+                </prop>
+
+                <prop oor:name="Context" oor:type="xs:string">
+                    <value>com.sun.star.text.TextDocument</value>
+                </prop>
+
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                    <value/>
+                </prop>
+            </node>
+        </node>
+    </node>
+</oor:component-data>
